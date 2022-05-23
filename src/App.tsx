@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import {useToValues} from "./hooks/useToValues";
+import {StockForm} from "./components/StockForm";
+import {StockList} from "./components/StockList";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const {values, addValue, deleteValue} = useToValues([])
+    return (
+        <div className="App">
+            <div className='Main'>
+                <div>
+                    <h1>Узнай цену акции!</h1>
+                    <StockForm addValue={(text) => {
+                        const trimmedText = text.trim();
+
+                        if (trimmedText.length > 0) {
+                            addValue(trimmedText);
+                        }
+                    }}/>
+                    <StockList values={values}/>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default App;
