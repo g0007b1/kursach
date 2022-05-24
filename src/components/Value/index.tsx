@@ -1,11 +1,16 @@
-import React from "react";
+import React, {FC} from "react";
 
 type PropsType = {
-    value:any
+    value: string,
+    deleteValue: (index: number) => void,
+    index: number
 }
 
-export const Value:React.FC<PropsType> = (props) => {
+export const Value: FC<PropsType> = ({value, deleteValue, index}) => {
     return (
-        <h1>{props.value}</h1>
+        <div className='value'>
+            <h1>{value}</h1>
+            <button onClick={() => deleteValue(index)} className='delete_button'>X</button>
+        </div>
     )
 }

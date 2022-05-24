@@ -1,10 +1,36 @@
-.App {
-
+.Main {
+    height: 100vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
 }
 
-.Main {
-  height: 100vh;
-  justify-content: center;
-  display: flex;
-  align-items: center;
+.form {
+    justify-content: center;
+    display: flex;
+}
+
+.form__input {
+    width: 100%;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.stock-list {
+    justify-content: center;
+}
+
+.value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.value h1 {
+    margin: 10px;
+}
+
+.delete_button {
+    height: 50%;
+
 }

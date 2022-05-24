@@ -1,14 +1,16 @@
 import {Value} from "../Value";
-import React from "react";
+import React, {FC} from "react";
 
 type PropsType = {
-    values:Array<string>
+    values: string[],
+    deleteValue: (index: number) => void
 }
 
-export const StockList:React.FC<PropsType> = (props) => {
-    let arrayOfStocks = props.values.map((value:any) => <Value key={value} value={value}/>)
+export const StockList: FC<PropsType> = ({values, deleteValue}) => {
+    let arrayOfStocks = values.map((value: any, index) => <Value key={index} value={value} index={index}
+                                                                 deleteValue={deleteValue}/>)
     return (
-        <div>
+        <div className='stock-list'>
             {arrayOfStocks}
         </div>
     )
