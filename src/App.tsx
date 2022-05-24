@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {useStockValues} from "./hooks/useToValues";
+import {useStockValues} from "./hooks/useStockValues";
 import {StockForm} from "./components/StockForm";
 import {StockList} from "./components/StockList";
 
