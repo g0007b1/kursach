@@ -7,7 +7,7 @@ type PropsType = {
 }
 
 export const StockList: FC<PropsType> = ({values, deleteValue}) => {
-    let arrayOfStocks = values.map((value: any, index) => <Value key={index} value={value} index={index}
+    let arrayOfStocks = values.map((value, index) => <Value key={index} value={value} index={index}
                                                                  deleteValue={deleteValue}/>)
     return (
         <div className='stock-list'>
