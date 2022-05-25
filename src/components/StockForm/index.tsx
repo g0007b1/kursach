@@ -7,7 +7,7 @@ type PropsType = {
 export const StockForm: FC<PropsType> = ({addValue}) => {
     const [value, setValue] = useState('')
     const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setValue(e.target.value)
+        setValue(e.target.value.toUpperCase())
     }
     const submit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
