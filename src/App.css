@@ -47,11 +47,14 @@
 }
 
 .suggested-stock {
-    background:none;
-    border:none;
     margin:5px;
     padding:0;
     cursor: pointer;
     color: grey;
     border-bottom: 1px solid grey;
+}
+
+.suggested-stock__array {
+    display: flex;
+    margin-bottom: 5px;
 }

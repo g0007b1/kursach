@@ -1,17 +1,16 @@
-import React, {Dispatch, FC, SetStateAction} from "react";
+import React, {FC} from "react";
 
 const Stocks = ['DSKY', 'SBER', 'GAZP', 'TCSG', 'YNDX', 'LENT', 'SVET', 'AFLT', 'QIWI']
 
 type Props = {
-    setValue: Dispatch<SetStateAction<string>>
+    setValue: (value:string) => void
 }
 
 export const SuggestedStocks: FC<Props> = ({setValue}) => {
-
-    const suggestedStocksArray = Stocks.map(stock => <button key={stock} onClick={() => setValue(stock)}
-                                                             className={'suggested-stock'}>{stock}</button>)
+    const suggestedStocksArray = Stocks.map(stock => <p key={stock} onClick={() => {setValue(stock)}}
+                                                             className={'suggested-stock'}>{stock}</p>)
     return (
-        <div>
+        <div className={'suggested-stock__array'}>
             {suggestedStocksArray}
         </div>
     )

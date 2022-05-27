@@ -16,12 +16,17 @@ export const StockForm: FC<Props> = ({addValue}) => {
         setValue('')
     }
 
+    const onButtonSubmit = (value:string) => {
+        setValue(value)
+        addValue(value)
+        setValue('')
+    }
+
     return (
         <div>
-
             <form onSubmit={handleSubmit} className='form'>
-                <SuggestedStocks setValue={setValue}/>
-                <input placeholder='... или введите любой другой тикер' onChange={onInputChange} value={value}
+                <SuggestedStocks setValue={onButtonSubmit}/>
+                <input  placeholder='... или введите любой другой тикер' onChange={onInputChange} value={value}
                        className='form__input'/>
             </form>
         </div>
