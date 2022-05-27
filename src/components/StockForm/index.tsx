@@ -18,9 +18,9 @@ export const StockForm: FC<Props> = ({addValue}) => {
 
     return (
         <div>
-            <SuggestedStocks setValue={setValue}/>
-            <form onSubmit={handleSubmit} className='form'>
 
+            <form onSubmit={handleSubmit} className='form'>
+                <SuggestedStocks setValue={setValue}/>
                 <input placeholder='... или введите любой другой тикер' onChange={onInputChange} value={value}
                        className='form__input'/>
             </form>
