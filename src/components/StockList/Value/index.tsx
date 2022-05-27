@@ -1,12 +1,12 @@
 import React, {FC} from "react";
 
-type PropsType = {
+type Props = {
     value: string,
     deleteValue: (index: number) => void,
     index: number
 }
 
-export const Value: FC<PropsType> = ({value, deleteValue, index}) => {
+const Value: FC<Props> = ({value, deleteValue, index}) => {
     return (
         <div className='value'>
             <h1>{value}</h1>
@@ -14,3 +14,5 @@ export const Value: FC<PropsType> = ({value, deleteValue, index}) => {
         </div>
     )
 }
+
+export const MemoValue = React.memo(Value)

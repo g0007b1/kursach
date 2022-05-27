@@ -1,23 +1,29 @@
 import React, {ChangeEvent, FC, FormEvent, useState} from "react";
+import {SuggestedStocks} from "./SuggestedStocks";
 
-type PropsType = {
-    addValue: (value: string) => void | number
+type Props = {
+    addValue: (value: string) => void
 }
 
-export const StockForm: FC<PropsType> = ({addValue}) => {
+export const StockForm: FC<Props> = ({addValue}) => {
     const [value, setValue] = useState('')
     const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
         setValue(e.target.value.toUpperCase())
     }
-    const submit = (event: FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         addValue(value);
         setValue('')
     }
+
     return (
-        <form onSubmit={submit} className='form'>
-            <input placeholder='Введите тикер (например GAZP, SBER)' onChange={onInputChange} value={value}
-                   className='form__input'/>
-        </form>
+        <div>
+            <SuggestedStocks setValue={setValue}/>
+            <form onSubmit={handleSubmit} className='form'>
+
+                <input placeholder='... или введите любой другой тикер' onChange={onInputChange} value={value}
+                       className='form__input'/>
+            </form>
+        </div>
     )
 }

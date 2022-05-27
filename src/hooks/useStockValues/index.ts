@@ -12,6 +12,7 @@ export const useStockValues = (initialValues: string[]) => {
     }
     const deleteValue = (deleteIndex: number) => {
         const newValues = values.filter((_, index) => index !== deleteIndex);
+        console.log(values)
         setValues(newValues)
     }
     return {

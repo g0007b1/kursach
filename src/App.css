@@ -1,3 +1,4 @@
+
 .Main {
     height: 100vh;
     justify-content: center;
@@ -5,9 +6,20 @@
     align-items: center;
 }
 
+.Widget {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Widget h1 {
+    margin: 0 0 10px;
+}
+
 .form {
     justify-content: center;
     display: flex;
+    flex-direction: column;
 }
 
 .form__input {
@@ -32,5 +44,14 @@
 
 .delete_button {
     height: 50%;
+}
 
+.suggested-stock {
+    background:none;
+    border:none;
+    margin:5px;
+    padding:0;
+    cursor: pointer;
+    color: grey;
+    border-bottom: 1px solid grey;
 }
